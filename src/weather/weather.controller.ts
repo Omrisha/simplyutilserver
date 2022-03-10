@@ -1,6 +1,6 @@
 import { Controller, Get, Param, UseFilters } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { HttpExceptionFilter } from 'src/common/filter/http-exception.filter';
+import { HttpExceptionFilter } from '../common/filter/http-exception.filter';
 import { WeatherDto } from './dto/weather.dto';
 import { WeatherService } from './weather.service';
 

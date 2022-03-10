@@ -2,7 +2,8 @@ import { Controller, Get, Param, Query, UseFilters } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { RatesService } from './rates.service';
 import { ConvertedRateDto } from './dto/converted-rate.dto';
-import { HttpExceptionFilter } from 'src/common/filter/http-exception.filter';
+import { HttpExceptionFilter } from '../common/filter/http-exception.filter';
+
 
 @Controller('rates')
 export class RatesController {
