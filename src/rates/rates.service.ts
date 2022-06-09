@@ -21,4 +21,15 @@ export class RatesService {
             return rates;
         }));
     }
+
+    getRateNames(): Observable<String[]> {
+        return this.httpClient.get(this.url + '?apikey=' + this.apiKey)
+        .pipe(map((axiosResponse: AxiosResponse) => { 
+            var dto = axiosResponse.data as BaseRateDto; 
+            var rates: String[] = [];
+            for (const [rate, rateValue] of Object.entries(dto.data))
+                rates.push(rate);
+            return rates;
+        }));
+    }
 }

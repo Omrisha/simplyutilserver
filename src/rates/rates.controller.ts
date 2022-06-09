@@ -15,4 +15,9 @@ export class RatesController {
             @Param('value') value: number): Observable<ConvertedRateDto[]> {
         return this.ratesService.getRates(baseRate, value);
     }
+
+    @Get('names')
+    getRateNames(): Observable<String[]> {
+        return this.ratesService.getRateNames();
+    }
 }
