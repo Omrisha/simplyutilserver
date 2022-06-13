@@ -9,8 +9,8 @@ export class RatesController {
   constructor(private ratesService: RatesService) {}
 
   @Get(':baseRate/:value')
-  @Header('accept', 'application-json')
-  @Header('content-type', 'application-json')
+  @Header('accept', 'application/json')
+  @Header('content-type', 'application/json')
   @UseFilters(HttpExceptionFilter)
   getRate(
     @Param('baseRate') baseRate: string,
@@ -20,8 +20,8 @@ export class RatesController {
   }
 
   @Get('names')
-  @Header('accept', 'application-json')
-  @Header('content-type', 'application-json')
+  @Header('accept', 'application/json')
+  @Header('content-type', 'application/json')
   getRateNames(): Observable<string[]> {
     return this.ratesService.getRateNames();
   }

@@ -9,8 +9,8 @@ export class WeatherController {
   constructor(private weatherService: WeatherService) {}
 
   @Get(':cityName')
-  @Header('accept', 'application-json')
-  @Header('content-type', 'application-json')
+  @Header('accept', 'application/json')
+  @Header('content-type', 'application/json')
   @UseFilters(HttpExceptionFilter)
   getWeather(@Param('cityName') cityName: string): Observable<WeatherDto> {
     return this.weatherService.getWeather(cityName);
